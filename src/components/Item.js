@@ -28,31 +28,34 @@ export default function Item({name, link, description, price, img, status, likes
 
     return (
         <div>
-            <img src={img} alt={name} width={350} height={300}/>
+            <img className="object-cover h-96 w-72" src={img} alt={name} width={350} height={466}/>
             <div className="flex justify-center">
                 <div className="text-center py-3 space-y-2">
-                    <p className="font-semibold">{name}</p>
+                    <p className="font-semibold">{name} {status == "available" && ""}</p>
                     { showDesc ?
                         <div className="space-y-2">
                             <p>{description}</p>
                             <p className="font-semibold">${price}</p>
                             {
                                 link == null ?
-                                <p></p>
+                                <p>no link!</p>
                                 : <p>[<a className="text-violet-500" href={link}>source</a>]</p>
                             }
                         </div>
                     : <button onClick={displayDesc} className="bg-sky-100 rounded-full p-0.8">tell me more...</button>}
                 </div>
             </div>
-            <div className="flex justify-center text-center">
+            <div className="flex justify-center text-center mb-8">
                 { contactInfo  ? 
                     <div className="flex">
                         <Contact name={name}></Contact>
                     </div>
                 :   <button onClick={getContactInfo} className="bg-violet-100 rounded-full p-0.8">
                         { !submitted ?
-                            <p>interested? - {status}</p>
+                            <div>
+                                <p>interested?</p>
+                            </div>
+    
                             : <p>thanks!</p>
                         }
                     </button>
