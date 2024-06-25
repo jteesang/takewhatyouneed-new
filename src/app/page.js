@@ -19,7 +19,7 @@ export default function Home() {
   
       <div className="justify-start font-mono text-sm py-10">
         <p>seller: <button className="bg-violet-100 rounded-full p-0.8">julia!</button></p>
-        <p>location: some place (<a className="text-violet-500" href="#">map</a>)</p>
+        <p>location: {process.env.NEXT_PUBLIC_CITY} (<a className="text-violet-500" href={process.env.NEXT_PUBLIC_ZIPCODE}>map</a>)</p>
         <p>dates: <button className="bg-violet-100 rounded-full p-0.8">now - aug 2024</button></p>
       </div>
 
