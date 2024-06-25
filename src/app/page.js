@@ -24,7 +24,7 @@ export default function Home() {
       </div>
 
       <div className="w-full items-center justify-between font-mono text-sm my-8">
-        <div className= "grid grid-cols-5 justify-items-center">
+        <div className= "grid grid-cols-3 justify-items-center">
           {
             items.map(({id, name, link, description, price, status}) => {
               const url = publicUrl + name + ".png"
