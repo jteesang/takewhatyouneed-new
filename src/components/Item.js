@@ -28,7 +28,7 @@ export default function Item({name, link, description, price, img, status, likes
 
     return (
         <div className="mb-8">
-            <img className="object-cover h-96 w-72" src={img} alt={name} width={350} height={466}/>
+            <img className="object-contain h-96 w-72" src={img} alt={name} width={350} height={466} fill={true}/>
             <div className="flex justify-center">
                 <div className="text-center py-3 space-y-2">
                     <p className="font-semibold">{status !== "available" && status} {name} </p>
