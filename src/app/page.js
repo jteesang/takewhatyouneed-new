@@ -1,11 +1,12 @@
 import Item from "@/components/Item";
 import { createSupabaseClient } from '@/utils/client';
+import { createClient } from '@supabase/supabase-js';
 
 const bucketName = "takewhatyouneed"
 const publicUrl = process.env.NEXT_PUBLIC_SUPABASE_PUBLIC_URL
 
 const supabase = createSupabaseClient();
-let {data: items} = await supabase.from("julia-items").select("*");
+let {data: items} = await supabase.from("julia-items").select("*").limit(30);
 // console.log(items)
 
 export default function Home() {
