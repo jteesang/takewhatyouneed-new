@@ -27,11 +27,11 @@ export default function Item({name, link, description, price, img, status, likes
     }
 
     return (
-        <div>
+        <div className="mb-8">
             <img className="object-cover h-96 w-72" src={img} alt={name} width={350} height={466}/>
             <div className="flex justify-center">
                 <div className="text-center py-3 space-y-2">
-                    <p className="font-semibold">{name} {status == "available" && ""}</p>
+                    <p className="font-semibold">{status !== "available" && status} {name} </p>
                     { showDesc ?
                         <div className="space-y-2">
                             <p>{description}</p>
@@ -45,7 +45,7 @@ export default function Item({name, link, description, price, img, status, likes
                     : <button onClick={displayDesc} className="bg-sky-100 rounded-full p-0.8">tell me more...</button>}
                 </div>
             </div>
-            <div className="flex justify-center text-center mb-8">
+            {/* <div className="flex justify-center text-center mb-8">
                 { contactInfo  ? 
                     <div className="flex">
                         <Contact name={name}></Contact>
@@ -61,7 +61,7 @@ export default function Item({name, link, description, price, img, status, likes
                     </button>
                 }   
          
-            </div>
+            </div> */}
         </div>
 
     )
