@@ -22,7 +22,7 @@ export default function Home() {
         <p>dates: <button className="bg-violet-100 rounded-full p-0.8">now - aug 2024</button></p>
       </div>
 
-      <div className="w-full items-center justify-between font-mono text-sm">
+      <div className="w-full items-center justify-between font-mono text-sm my-8">
         <div className= "grid grid-cols-5 justify-items-center">
           {
             items.map(({id, name, link, description, price, status}) => {
